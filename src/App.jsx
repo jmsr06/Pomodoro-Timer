@@ -80,11 +80,11 @@ function App() {
 
 
   return (
-    <div className="nunito-regular w-full h-screen flex flex-col justify-center items-center gap-20">
-      <h1 className='text-blue-700 text-5xl font-semibold'>Pomodoro Timer</h1>
-      <div className='border-4 border-[#D3E0FB] bg-[#EDF4FE] text-blue-700 rounded-full font-semibold w-96 h-96 flex flex-col justify-center items-center gap-5'>
-        <span className='text-3xl' id="timer-label" ref={label}>Session</span>
-        <span className='text-[90px]' id="time-left">{minutes.toString().padStart(2, "0")}:
+    <div className="nunito-regular w-full h-screen flex flex-col justify-center items-center gap-10 md:gap-20">
+      <h1 className='text-blue-700 text-3xl md:text-5xl font-semibold'>Pomodoro Timer</h1>
+      <div className='border-4 border-[#D3E0FB] bg-[#EDF4FE] text-blue-700 rounded-full font-semibold w-72 h-72 md:w-96 md:h-96 flex flex-col justify-center items-center gap-5'>
+        <span className='text-2xl md:text-3xl' id="timer-label" ref={label}>Session</span>
+        <span className='text-6xl md:text-[90px]' id="time-left">{minutes.toString().padStart(2, "0")}:
           {seconds.toString().padStart(2, "0")}</span>
         <div className='flex flex-row gap-3 text-3xl'>
           <span id="start_stop" onClick={startStop} className='cursor-pointer hover:opacity-60'><i className="fa-solid fa-forward-step"></i></span>
@@ -93,7 +93,7 @@ function App() {
       </div>
       <div className='flex flex-row gap-16 justify-center items-center text-blue-700 font-semibold'>
         <div className='flex flex-col justify-center items-center gap-5'>
-          <label className='text-3xl' id="break-label">Break Length</label>
+          <label className='text-xl md:text-3xl' id="break-label">Break Length</label>
           <div className='flex flex-row gap-4 justify-center text-2xl'>
             <span onClick={decrementBreakTime} id="break-decrement"><i className="rounded-full bg-blue-700 p-2 text-white hover:opacity-70 cursor-pointer fa-solid fa-minus"></i></span>
             <span id="break-length">{breakTime}</span>
@@ -101,7 +101,7 @@ function App() {
           </div>
         </div>
         <div className='flex flex-col justify-center items-center gap-5'>
-          <label className='text-3xl' id="session-label">Session Length</label>
+          <label className='text-xl md:text-3xl' id="session-label">Session Length</label>
           <div className='flex flex-row gap-4 justify-center text-2xl'>
             <span onClick={decrementSessionTime} id="session-decrement"><i className="rounded-full bg-blue-700 p-2 text-white hover:opacity-70 cursor-pointer fa-solid fa-minus"></i></span>
             <span id="session-length">{sessionTime}</span>
